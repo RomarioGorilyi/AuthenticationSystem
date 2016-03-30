@@ -1,4 +1,4 @@
-# AuthenticationSystem
+# Authentication system
 System of delimitation of users' rights on top of password authentication.
 
 
