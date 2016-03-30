@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - users@localhost" uuid="68387b03-599a-4ca3-beb1-1420706cf47a">
+    <database-info product="MySQL" version="5.5.48" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="users"/>
+      <table id="2" parent="1" name="users"/>
+      <column id="3" parent="2" name="IDUser">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="4" parent="2" name="Username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="5" parent="2" name="Password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="6" parent="2" name="Blocked">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="7" parent="2" name="TimeOfBlock">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="8" parent="2" name="LastPasswordChange">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="9" parent="2" name="usernameUnique">
+        <columns>Username</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>IDUser</columns>
+        <primary>1</primary>
+      </key>
+      <key id="11" parent="2" name="usernameUnique">
+        <columns>Username</columns>
+        <underlying-index>usernameUnique</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>
