@@ -24,4 +24,6 @@ Simple **User** can:
 3. Exit the app
 
 
-*Password restrictions*: only **Latin** and **Cyrillic** symbols, **at least 1** Latin and Cyrillic character **simultaniously**.
+*Password restrictions*: 
+  - only **Latin** and **Cyrillic** symbols
+  - **at least 1** Latin and Cyrillic character **simultaniously**.
