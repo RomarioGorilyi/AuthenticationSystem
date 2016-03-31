@@ -19,6 +19,7 @@ public class Admin extends User {
     public void changePasswordFirstAdminEntry() {
         String newPassword = checkNewPassword();
         updatePasswordInDB(newPassword);
+        setPassword(newPassword);
     }
 
     public void addNewUser() {

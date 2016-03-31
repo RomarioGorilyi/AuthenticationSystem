@@ -45,7 +45,7 @@ public class MyApp {
 
         switch (commandNumber) {
             case 1:
-                enterAsUser();
+                enterSystem();
                 break;
             case 2:
                 showHelp();
@@ -214,12 +214,12 @@ public class MyApp {
                 "\nCopyright © 2016");
     }
 
-    public static void enterAsUser() throws IOException {
+    public static void enterSystem() throws IOException {
         connect();
         unblockUsers();
 
         // if there is no users in table - create ADMIN with password ""
-        if (isTableEmpty()) {
+        if (checkIfTableEmpty()) {
             Admin admin = new Admin("");
             admin.addUserToDB();
             System.out.println("Successfully login as ADMIN!" +
@@ -236,28 +236,7 @@ public class MyApp {
 
             // check if we are trying to enter as ADMIN
             if ((username.toString()).equals("ADMIN")) {
-                System.out.print("Enter password > ");
-                Scanner sc1 = new Scanner(System.in);
-                StringBuilder password = new StringBuilder();
-                password.append(sc1.nextLine());
-                int attemptCounter = 0;
-
-                while (!checkPasswordWithDB(username.toString(), password.toString()) && attemptCounter < 3) {
-                    System.out.println("\nError. Incorrect password.");
-                    System.out.print("Please try again > ");
-                    attemptCounter++;
-                    sc1 = new Scanner(System.in);
-                    password.replace(0, password.length(), sc1.nextLine());
-                }
-
-                if (attemptCounter == 3) {
-                    exit();
-                    return;
-                }
-
-                Admin admin = new Admin(password.toString());
-                System.out.println("You entered successfully as ADMIN!");
-                showMenu(admin);
+                enterAsAdmin(username.toString());
 
             } else {
                 while (!checkIfUserExists(username.toString())) {
@@ -267,40 +246,12 @@ public class MyApp {
                     username.replace(0, username.length(), sc1.nextLine());
                 }
 
-                System.out.print("Enter password > ");
-                Scanner sc1 = new Scanner(System.in);
-                StringBuilder password = new StringBuilder();
-                password.append(sc1.nextLine());
-
-                int attemptCounter = 0;
-                // Max amount of attempts - 3, after the 3rd incorrect attempt - block this user and return to main menu
-                while (!checkPasswordWithDB(username.toString(), password.toString()) && attemptCounter < 2) {
-                    attemptCounter++;
-                    System.out.println("\nError. Incorrect password.");
-                    System.out.print("Please try again > ");
-                    sc1 = new Scanner(System.in);
-                    password.replace(0, password.length(), sc1.nextLine());
-                }
-
-                if (attemptCounter == 3) {
-                    blockUser(username.toString());
-                    showMenu();
-                }
-
-                if (checkIfBlocked(username.toString())) {
-                    System.out.println("This user is blocked due to many attempts to enter a correct password.");
-                    showMenu();
-
-                } else {
-                    User user = new User(username.toString(), password.toString());
-                    System.out.println("You entered successfully as " + username + "!");
-                    showMenu(user);
-                }
+                enterAsUser(username.toString());
             }
         }
     }
 
-    public static boolean isTableEmpty() {
+    public static boolean checkIfTableEmpty() {
         boolean ifEmpty = false;
         try {
             Statement select = getConnection().createStatement();
@@ -313,6 +264,62 @@ public class MyApp {
             sqle.printStackTrace();
         }
         return ifEmpty;
+    }
+
+    public static void enterAsAdmin(String username) throws IOException {
+        System.out.print("Enter password > ");
+        Scanner sc1 = new Scanner(System.in);
+        StringBuilder password = new StringBuilder();
+        password.append(sc1.nextLine());
+        int attemptCounter = 0;
+
+        while (!checkPasswordWithDB(username, password.toString()) && attemptCounter < 3) {
+            System.out.println("\nError. Incorrect password.");
+            System.out.print("Please try again > ");
+            attemptCounter++;
+            sc1 = new Scanner(System.in);
+            password.replace(0, password.length(), sc1.nextLine());
+        }
+
+        if (attemptCounter == 3) {
+            exit();
+        }
+
+        Admin admin = new Admin(password.toString());
+        System.out.println("You entered successfully as ADMIN!");
+        showMenu(admin);
+    }
+
+    public static void enterAsUser(String username) throws IOException {
+        System.out.print("Enter password > ");
+        Scanner sc1 = new Scanner(System.in);
+        StringBuilder password = new StringBuilder();
+        password.append(sc1.nextLine());
+
+        int attemptCounter = 0;
+        // Max amount of attempts - 3, after the 3rd incorrect attempt - block this user and return to main menu
+        while (!checkPasswordWithDB(username, password.toString()) && attemptCounter < 2) {
+            attemptCounter++;
+            System.out.println("\nError. Incorrect password.");
+            System.out.print("Please try again > ");
+            sc1 = new Scanner(System.in);
+            password.replace(0, password.length(), sc1.nextLine());
+        }
+
+        if (attemptCounter == 3) {
+            blockUser(username);
+            showMenu();
+        }
+
+        if (checkIfBlocked(username)) {
+            System.out.println("This user is blocked due to many attempts to enter a correct password.");
+            showMenu();
+
+        } else {
+            User user = new User(username, password.toString());
+            System.out.println("You entered successfully as " + username + "!");
+            showMenu(user);
+        }
     }
 
     public static boolean checkIfUserExists(String username) {

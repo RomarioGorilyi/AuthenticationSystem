@@ -16,6 +16,11 @@ public class User {
     private String username;
     private String password;
 
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -38,6 +43,7 @@ public class User {
                                                 // is bigger than 24 hours
             checkOldPassword();
             String newPassword = checkNewPassword();
+            setPassword(newPassword);
             updatePasswordInDB(newPassword);
         } else {
             System.out.println("It's too early to change password. Try a bit later.");
