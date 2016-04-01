@@ -2,7 +2,7 @@ package ua.ipt.users;
 
 import java.util.Scanner;
 
-import static ua.ipt.MyApp.checkIfUserExists;
+import static ua.ipt.main.MyApp.checkIfUserExists;
 
 
 /**

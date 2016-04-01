@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e52299e6-02b1-4074-8467-ffb161f05a05" name="Default" comment="" />
+    <list default="true" id="e52299e6-02b1-4074-8467-ffb161f05a05" name="Default" comment="v. 2.0&#10;added security service">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/ipt/signature/WinRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/ipt/users/Admin.class" afterPath="$PROJECT_DIR$/target/classes/ua/ipt/users/Admin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/ipt/users/User.class" afterPath="$PROJECT_DIR$/target/classes/ua/ipt/users/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/User.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab1.iml" afterPath="$PROJECT_DIR$/Lab1.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/ipt/users/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/ua/ipt/users/Admin.java" />
+    </list>
     <ignored path="Lab1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/database/Connector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="36" />
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#1528#1529#0" expanded="true" />
                 <element signature="e#1561#1562#0" expanded="true" />
@@ -97,33 +113,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyApp.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
+      <file leaf-file-name="MyApp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.8732395">
-              <caret line="228" column="28" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#MyApp#0" expanded="false" />
                 <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
                 <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
                 <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-                <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-                <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-                <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-                <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-                <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-                <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-                <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-                <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-                <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-                <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-                <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-                <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-                <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-                <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-                <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-                <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+                <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+                <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+                <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+                <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+                <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+                <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+                <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+                <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+                <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+                <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+                <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+                <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+                <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+                <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+                <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+                <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthenticationManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/AuthenticationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WinRegistry.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/WinRegistry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40140846">
+              <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10668#10683#0" expanded="true" />
+                <element signature="e#11640#11648#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Signature.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+                <element signature="e#828#829#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#910#911#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
+                <element signature="e#1206#1207#0" expanded="true" />
+                <element signature="e#1248#1249#0" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
+                <element signature="e#1354#1355#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1453#1454#0" expanded="true" />
+                <element signature="e#1488#1489#0" expanded="true" />
+                <element signature="e#1544#1545#0" expanded="true" />
+                <element signature="e#1592#1593#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
+                <element signature="e#1664#1665#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
+                <element signature="e#1766#1767#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,6 +214,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -149,10 +228,15 @@
         <option value="$PROJECT_DIR$/src/main/java/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/ipt/database/Connector.java" />
         <option value="dbtable:/3f453f9c/68387b03-599a-4ca3-beb1-1420706cf47a/users.users" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/ipt/users/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/ipt/users/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/ipt/main/AuthenticationManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/ipt/signature/WinRegistry.java" />
       </list>
     </option>
   </component>
@@ -244,6 +328,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dependency-jars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -265,30 +381,8 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ipt" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,6 +413,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ipt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="signature" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ipt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,11 +546,11 @@
     <configuration default="false" name="MyApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ua.ipt.*" />
+          <option name="PATTERN" value="ua.ipt.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ua.ipt.MyApp" />
+      <option name="MAIN_CLASS_NAME" value="ua.ipt.main.MyApp" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -934,15 +1088,15 @@
       <workItem from="1458602411401" duration="1242000" />
       <workItem from="1458665115161" duration="137012000" />
       <workItem from="1459294704427" duration="418000" />
-      <workItem from="1459295565116" duration="12360000" />
+      <workItem from="1459295565116" duration="31426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211857000" />
+    <option name="totallyTimeSpent" value="230923000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="7" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -952,17 +1106,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32740742" sideWeight="0.5153374" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.49079755" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.49079755" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1357362" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18021472" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11269841" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932603" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39851853" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -981,9 +1135,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v. 2.0&#10;added security service" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 2.0&#10;added security service" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1052,32 +1210,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="389" column="73" selection-start-line="389" selection-start-column="62" selection-end-line="389" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
             <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-            <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -1134,32 +1291,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="389" column="73" selection-start-line="389" selection-start-column="62" selection-end-line="389" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
             <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-            <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -1175,32 +1331,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
             <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-            <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -1257,32 +1412,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
             <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
             <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-            <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -1371,18 +1525,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="-0.6037736">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/users/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.765">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1592#1593#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/database/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="36" />
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#1528#1529#0" expanded="true" />
             <element signature="e#1561#1562#0" expanded="true" />
@@ -1408,6 +1611,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/AuthenticationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
+            <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
+            <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23943663">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.51">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/3f453f9c/68387b03-599a-4ca3-beb1-1420706cf47a/users.users">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1421,56 +1679,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/users/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/WinRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.40140846">
+          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="-0.6037736">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/MyApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8732395">
-          <caret line="228" column="28" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MyApp#0" expanded="false" />
-            <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
-            <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
-            <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459450907971" expanded="true" signature="6196:6215" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6231" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="6196:6233" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9419:9438" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="9425:9438" placeholder="select * fro... users" />
-            <marker date="1459450907971" expanded="true" signature="11957:12002" placeholder="SELECT Usern... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12561" placeholder="SELECT Blo F... users" />
-            <marker date="1459450907971" expanded="true" signature="12517:12580" placeholder="SELECT Block... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13164" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13126:13181" placeholder="SELECT Passw... users" />
-            <marker date="1459450907971" expanded="true" signature="13710:13781" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="13716:13781" placeholder="SELECT * FRO... users" />
-            <marker date="1459450907971" expanded="true" signature="14174:14277" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14307" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14325" placeholder="UPDATE users... " />
-            <marker date="1459450907971" expanded="true" signature="14174:14327" placeholder="UPDATE users... " />
+            <element signature="e#10668#10683#0" expanded="true" />
+            <element signature="e#11640#11648#0" expanded="true" />
           </folding>
         </state>
       </provider>
