@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e52299e6-02b1-4074-8467-ffb161f05a05" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ua/ipt/MyApp.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e52299e6-02b1-4074-8467-ffb161f05a05" name="Default" comment="" />
     <ignored path="Lab1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -131,14 +128,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthenticationManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/AuthenticationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8356807">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,10 +152,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signature.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Signature.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="2.4366198">
               <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="e#749#750#0" expanded="true" />
@@ -1075,7 +1070,7 @@
       <workItem from="1458602411401" duration="1242000" />
       <workItem from="1458665115161" duration="137012000" />
       <workItem from="1459294704427" duration="418000" />
-      <workItem from="1459295565116" duration="31614000" />
+      <workItem from="1459295565116" duration="31754000" />
     </task>
     <task id="LOCAL-00001" summary="v. 2.0&#10;added security service">
       <created>1459477527194</created>
@@ -1083,11 +1078,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459477527194</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v. 2.0&#10;added security service">
+      <created>1459477712673</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459477712673</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231111000" />
+    <option name="totallyTimeSpent" value="231251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -1543,39 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1544#1545#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/database/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1601,35 +1569,6 @@
             <marker date="1459369132542" expanded="true" signature="1615:1726" placeholder="SELECT * FRO... users" />
             <marker date="1459369132542" expanded="true" signature="1615:1729" placeholder="SELECT * FRO... users" />
             <marker date="1459369132542" expanded="true" signature="5001:5049" placeholder="UPDATE users... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
-            <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
-            <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
-            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
-            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
-            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
-            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
-            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
-            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
-            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
-            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
-            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
-            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
-            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
-            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
-            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
-            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
-            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
-            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -1677,10 +1616,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/AuthenticationManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8356807">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/main/MyApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#checkIfTableEmpty#0;class#MyApp#0" expanded="false" />
+            <element signature="method#enterAsAdmin#0;class#MyApp#0" expanded="false" />
+            <element signature="method#checkIfUserExists#0;class#MyApp#0" expanded="false" />
+            <marker date="1459476965098" expanded="true" signature="6278:6297" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6313" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="6278:6315" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9501:9520" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="9507:9520" placeholder="select * fro... users" />
+            <marker date="1459476965098" expanded="true" signature="12039:12084" placeholder="SELECT Usern... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12643" placeholder="SELECT Blo F... users" />
+            <marker date="1459476965098" expanded="true" signature="12599:12662" placeholder="SELECT Block... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13246" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13208:13263" placeholder="SELECT Passw... users" />
+            <marker date="1459476965098" expanded="true" signature="13792:13863" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="13798:13863" placeholder="SELECT * FRO... users" />
+            <marker date="1459476965098" expanded="true" signature="14256:14359" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14389" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14407" placeholder="UPDATE users... " />
+            <marker date="1459476965098" expanded="true" signature="14256:14409" placeholder="UPDATE users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/ipt/signature/Signature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4366198">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1592#1593#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
           </folding>
         </state>
       </provider>
