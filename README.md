@@ -1,6 +1,9 @@
 # Authentication system
 System of delimitation of users' rights on top of password authentication.
 
+###Version 2.0:
+- Added protection against unauthorised copying and exploitation of the program that is enabled by the [AppProtectionService] (https://github.com/RomarioGorilyi/AppProtectionService). 
+- Protection is provided by [Siganture.java] (https://github.com/RomarioGorilyi/AuthenticationSystem/tree/master/src/main/java/ua/ipt/signature) and [AuthenticationManager.java] (https://github.com/RomarioGorilyi/AuthenticationSystem/blob/master/src/main/java/ua/ipt/main/AuthenticationManager.java).
 
 **Unregistered user** in the system can:
 
