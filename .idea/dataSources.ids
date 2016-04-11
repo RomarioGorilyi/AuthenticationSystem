@@ -9,43 +9,58 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="users"/>
       <table id="2" parent="1" name="users"/>
-      <column id="3" parent="2" name="IDUser">
+      <table id="3" parent="1" name="blockedusers"/>
+      <column id="4" parent="2" name="IDUser">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="4" parent="2" name="Username">
+      <column id="5" parent="2" name="Username">
         <mandatory>1</mandatory>
         <data-type>varchar(32)</data-type>
       </column>
-      <column id="5" parent="2" name="Password">
+      <column id="6" parent="2" name="Password">
         <mandatory>1</mandatory>
         <data-type>varchar(60)</data-type>
       </column>
-      <column id="6" parent="2" name="Blocked">
+      <column id="7" parent="2" name="Blocked">
         <mandatory>1</mandatory>
         <data-type>tinyint(1)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="7" parent="2" name="TimeOfBlock">
+      <column id="8" parent="2" name="TimeOfBlock">
         <data-type>datetime</data-type>
       </column>
-      <column id="8" parent="2" name="LastPasswordChange">
+      <column id="9" parent="2" name="LastPasswordChange">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <index id="9" parent="2" name="usernameUnique">
+      <index id="10" parent="2" name="usernameUnique">
         <columns>Username</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="10" parent="2" name="PRIMARY">
+      <key id="11" parent="2" name="PRIMARY">
         <columns>IDUser</columns>
         <primary>1</primary>
       </key>
-      <key id="11" parent="2" name="usernameUnique">
+      <key id="12" parent="2" name="usernameUnique">
         <columns>Username</columns>
         <underlying-index>usernameUnique</underlying-index>
+      </key>
+      <column id="13" parent="3" name="IDUser">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="14" parent="3" name="SerialNumber">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="15" parent="3" name="TimeOfBlock">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="16" parent="3" name="PRIMARY">
+        <columns>IDUser</columns>
+        <primary>1</primary>
       </key>
     </database-model>
   </data-source>

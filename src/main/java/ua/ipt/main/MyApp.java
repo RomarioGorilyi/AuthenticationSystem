@@ -1,5 +1,6 @@
 package ua.ipt.main;
 
+import ua.ipt.hardware.Hardware;
 import ua.ipt.users.Admin;
 import ua.ipt.users.User;
 
@@ -19,12 +20,15 @@ import static ua.ipt.database.Connector.*;
 public class MyApp {
 
     public static void main(String[] args) throws IOException {
+        connect();
         boolean isLegal = AuthenticationManager.isLegal();
-        if (isLegal) {
+        if (!isLegal) {
+            System.out.println("You have no rights for this program.");
+        } else if (isAppBlocked()) {
+            System.out.println("You are blocked!");
+        } else {
             System.out.println("----------------------------MyApp----------------------------");
             showMenu();
-        } else {
-            System.out.println("You have no rights for this program.");
         }
     }
 
@@ -49,27 +53,36 @@ public class MyApp {
 
         switch (commandNumber) {
             case 1:
+                unblockAppropriateUsers();
                 enterSystem();
                 break;
             case 2:
                 showHelp();
-
-                System.out.print("\nPress <Enter> for return to the menu > ");
-                Scanner readInput = new Scanner(System.in);
-                command = readInput.nextLine();
-                if (command.equals("")) {
-                    showMenu();
-                }
+                waitForPressEnter();
+                showMenu();
                 break;
             case 3:
-                exit();
+                exitApp();
                 break;
             default: break;
         }
     }
 
     /**
+     * Create scanner that waits for press of the button [Enter] and is used to return to the previous menu.
+     */
+    public static void waitForPressEnter() {
+        System.out.print("\nPress <Enter> for return to the menu > ");
+        Scanner readInput = new Scanner(System.in);
+        String command = readInput.nextLine();
+        while (!command.equals("")) {
+            command = readInput.nextLine();
+        }
+    }
+
+    /**
      * ADMIN menu
+     * @param admin ADMIN who enters and works with the system
      */
     public static void showMenu(Admin admin) throws IOException {
         System.out.println("\n*** Admin menu ***");
@@ -97,13 +110,8 @@ public class MyApp {
                 break;
             case 2:
                 showAllUsers();
-
-                System.out.print("\nPress <Enter> for return to the menu > ");
-                Scanner readInput = new Scanner(System.in);
-                command = readInput.nextLine();
-                if (command.equals("")) {
-                    showMenu(admin);
-                }
+                waitForPressEnter();
+                showMenu(admin);
                 break;
             case 3:
                 admin.addNewUser();
@@ -111,7 +119,7 @@ public class MyApp {
                 break;
             case 4:
                 System.out.print("Enter username of user you want to block > ");
-                readInput = new Scanner(System.in);
+                Scanner readInput = new Scanner(System.in);
                 StringBuilder username = new StringBuilder();
                 username.append(readInput.nextLine());
 
@@ -122,32 +130,23 @@ public class MyApp {
                 }
 
                 blockUser(username.toString());
-
-                System.out.print("\nPress <Enter> for return to the menu > ");
-                readInput = new Scanner(System.in);
-                command = readInput.nextLine();
-                if (command.equals("")) {
-                    showMenu(admin);
-                }
+                waitForPressEnter();
+                showMenu(admin);
                 break;
             case 5:
                 showHelp();
-
-                System.out.print("\nPress <Enter> for return to the menu > ");
-                readInput = new Scanner(System.in);
-                command = readInput.nextLine();
-                if (command.equals("")) {
-                    showMenu(admin);
-                }
+                waitForPressEnter();
+                showMenu(admin);
                 break;
             case 6:
-                exit();
+                exitApp();
             default: break;
         }
     }
 
     /**
      * User menu
+     * @param user user who enters and works with the system
      */
     public static void showMenu(User user) throws IOException {
         System.out.println("\n*** User menu ***");
@@ -172,16 +171,11 @@ public class MyApp {
                 break;
             case 2:
                 showHelp();
-
-                System.out.print("\nPress <Enter> for return to the menu > ");
-                Scanner readInput = new Scanner(System.in);
-                command = readInput.nextLine();
-                if (command.equals("")) {
-                    showMenu(user);
-                }
+                waitForPressEnter();
+                showMenu(user);
                 break;
             case 3:
-                exit();
+                exitApp();
                 break;
             default: break;
         }
@@ -210,7 +204,10 @@ public class MyApp {
         }
     }
 
-    private static void showHelp() throws IOException {
+    /**
+     * Show Help that gives an about information of this project.
+     */
+    private static void showHelp() {
         System.out.println("\n*** Help ***");
         System.out.println("System of delimitation of users' rights on top of password authentication. " +
                 "\nCreated by the student of IPT, group FB-31, Roman Horilyi." +
@@ -218,11 +215,15 @@ public class MyApp {
                 "\nCopyright © 2016");
     }
 
+    /**
+     * Enter the system validating a username and a corresponding password to this user.
+     *
+     * If the table that contains all existing users with their flags is empty (it's the 1st entry in the system),
+     * create ADMIN with an empty password ("").
+     *
+     * @throws IOException
+     */
     public static void enterSystem() throws IOException {
-        connect();
-        unblockUsers();
-
-        // if there is no users in table - create ADMIN with password ""
         if (checkIfTableEmpty()) {
             Admin admin = new Admin("");
             admin.addUserToDB();
@@ -233,25 +234,8 @@ public class MyApp {
             showMenu(admin);
 
         } else {
-            System.out.print("\nEnter username > ");
-            Scanner sc = new Scanner(System.in);
-            StringBuilder username = new StringBuilder();
-            username.append(sc.nextLine());
-
-            // check if we are trying to enter as ADMIN
-            if ((username.toString()).equals("ADMIN")) {
-                enterAsAdmin(username.toString());
-
-            } else {
-                while (!checkIfUserExists(username.toString())) {
-                    System.out.println("\nError. There is no user with such username.");
-                    System.out.print("Please try again > ");
-                    Scanner sc1 = new Scanner(System.in);
-                    username.replace(0, username.length(), sc1.nextLine());
-                }
-
-                enterAsUser(username.toString());
-            }
+            int attemptCounter = 0; // is used to count unsuccessful attempts of a user to enter the system
+            validateUser(attemptCounter);
         }
     }
 
@@ -270,59 +254,182 @@ public class MyApp {
         return ifEmpty;
     }
 
-    public static void enterAsAdmin(String username) throws IOException {
-        System.out.print("Enter password > ");
-        Scanner sc1 = new Scanner(System.in);
-        StringBuilder password = new StringBuilder();
-        password.append(sc1.nextLine());
-        int attemptCounter = 0;
+    /**
+     * Validate possible user checking his username, password and rights with database
+     *
+     * @param attemptCounter number of attempts to enter the system that were made beforehand
+     * @return number of overall attempts to enter the system
+     * @throws IOException
+     */
+    public static int validateUser(int attemptCounter) throws IOException {
+        if (attemptCounter < 5) {
+            System.out.print("\nEnter username > ");
+            Scanner sc = new Scanner(System.in);
+            StringBuilder username = new StringBuilder();
+            username.append(sc.nextLine());
 
-        while (!checkPasswordWithDB(username, password.toString()) && attemptCounter < 3) {
-            System.out.println("\nError. Incorrect password.");
-            System.out.print("Please try again > ");
-            attemptCounter++;
-            sc1 = new Scanner(System.in);
-            password.replace(0, password.length(), sc1.nextLine());
-        }
+            // check if we are trying to enter as ADMIN
+            if (username.toString().equals("ADMIN")) {
+                enterAsAdmin(attemptCounter);
 
-        if (attemptCounter == 3) {
-            exit();
-        }
+            } else if (username.toString().toLowerCase().equals("admin") || !checkIfUserExists(username.toString())) {
+                // Due to the fact that MySQL isn't sensitive to letter case we should carry out ADMIN username
+                // verification.
+                //
+                // For example, our program shouldn't except "Admin", "admin", "aDMIN" as a valid username of ADMIN.
+                System.out.println("Error. There is no user with such username.");
+                validateUser(++attemptCounter);
 
-        Admin admin = new Admin(password.toString());
-        System.out.println("You entered successfully as ADMIN!");
-        showMenu(admin);
-    }
-
-    public static void enterAsUser(String username) throws IOException {
-        System.out.print("Enter password > ");
-        Scanner sc1 = new Scanner(System.in);
-        StringBuilder password = new StringBuilder();
-        password.append(sc1.nextLine());
-
-        int attemptCounter = 0;
-        // Max amount of attempts - 3, after the 3rd incorrect attempt - block this user and return to main menu
-        while (!checkPasswordWithDB(username, password.toString()) && attemptCounter < 2) {
-            attemptCounter++;
-            System.out.println("\nError. Incorrect password.");
-            System.out.print("Please try again > ");
-            sc1 = new Scanner(System.in);
-            password.replace(0, password.length(), sc1.nextLine());
-        }
-
-        if (attemptCounter == 3) {
-            blockUser(username);
-            showMenu();
-        }
-
-        if (checkIfBlocked(username)) {
-            System.out.println("This user is blocked due to many attempts to enter a correct password.");
-            showMenu();
+            } else {
+                enterAsUser(username.toString(), attemptCounter);
+            }
 
         } else {
-            User user = new User(username, password.toString());
-            System.out.println("You entered successfully as " + username + "!");
-            showMenu(user);
+            blockApp();
+            exitApp();
+        }
+
+        return attemptCounter;
+    }
+
+    /**
+     * Block usage of the program in case a user fails to validate correctly in the system 5 times updating a record
+     * in the table of blocked users in case there is already current user in database or adding new blocked user
+     * to the DB.
+     */
+    private static void blockApp() {
+        String serialNumber = Hardware.getSerialNumber();
+        if (!updateBlockIfUserExistsInDB(serialNumber)) {
+            addBlockedUserToDB(serialNumber);
+        }
+    }
+
+    /**
+     * Add user that fails to validate correctly in the system 5 times to the table of blocked users in database
+     * @param serialNumber hashcode of a serial number that contains an information about user computer
+     */
+    private static void addBlockedUserToDB(String serialNumber) {
+        try {
+            String query = "INSERT INTO blockedusers(SerialNumber) values(?)";
+            PreparedStatement insert = getConnection().prepareStatement(query);
+            insert.setString(1, serialNumber);
+            insert.executeUpdate();
+            System.out.println("\nUnfortunately, you are blocked!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * If there is a record that corresponds to the current user in the table of blocked users, update this existing
+     * record renovating TimeOfBlock with relevant time of the last block.
+     * Otherwise, we do nothing.
+     *
+     * @param serialNumber hashcode of a serial number that contains an information about user computer
+     * @return TRUE if there is already a user in the DB, otherwise - FALSE
+     */
+    private static boolean updateBlockIfUserExistsInDB(String serialNumber) {
+        boolean ifUserExistsInDB = false;
+
+        try {
+            String query = "SELECT * FROM blockedusers WHERE SerialNumber = ?";
+            PreparedStatement select = getConnection().prepareStatement(query);
+            select.setString(1, serialNumber);
+            ResultSet result = select.executeQuery();
+
+            if (result.next()) {
+                ifUserExistsInDB = true;
+                query = "UPDATE blockedusers SET TimeOfBlock = NOW() WHERE SerialNumber = ?";
+                Statement update = getConnection().createStatement();
+                update.executeUpdate(query);
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+
+        return ifUserExistsInDB;
+    }
+
+    /**
+     * Check if program is blocked for the current user
+     * (check if there is a user in the table of blocked users and at the same time 24 hours of block haven't expired)
+     *
+     * @return TRUE if program is blocked to the current user, otherwise - FALSE
+     */
+    private static boolean isAppBlocked() {
+        boolean ifBlocked = false;
+        String serialNumber = Hardware.getSerialNumber();
+        try {
+            String query = "SELECT * FROM blockedusers WHERE SerialNumber = ? " +
+                    "AND TIMEDIFF(NOW(), TimeOfBlock) <= '24:00:00.000000'";
+            PreparedStatement select = getConnection().prepareStatement(query);
+            select.setString(1, serialNumber);
+
+            ResultSet result = select.executeQuery();
+            if (result.next()) {
+                ifBlocked = true;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+        return ifBlocked;
+    }
+
+    /**
+     * Enter the system as ADMIN, if password is valid. Otherwise, try validate user once more.
+     *
+     * @param attemptCounter number of attempts to enter the system that were made beforehand
+     * @return number of overall attempts to enter the system
+     * @throws IOException
+     */
+    public static int enterAsAdmin(int attemptCounter) throws IOException {
+        System.out.print("Enter password > ");
+        Scanner sc1 = new Scanner(System.in);
+        StringBuilder password = new StringBuilder();
+        password.append(sc1.nextLine());
+
+        if (!checkPasswordWithDB("ADMIN", password.toString())) {
+            System.out.println("Error. Incorrect password.");
+            validateUser(++attemptCounter);
+
+        } else {
+            Admin admin = new Admin(password.toString());
+            System.out.println("You entered successfully as ADMIN!");
+            showMenu(admin);
+        }
+
+        return attemptCounter;
+    }
+
+    /**
+     * Enter the system as simple user, if password is valid and user isn't blocked.
+     * Otherwise, try validate user once more.
+     *
+     * @param username username of the user who tends to enter the system
+     * @param attemptCounter number of attempts to enter the system that were made beforehand
+     * @throws IOException
+     */
+    public static void enterAsUser(String username, int attemptCounter) throws IOException {
+        System.out.print("Enter password > ");
+        Scanner sc1 = new Scanner(System.in);
+        StringBuilder password = new StringBuilder();
+        password.append(sc1.nextLine());
+
+        if (!checkPasswordWithDB(username, password.toString())) {
+            System.out.println("\nError. Incorrect password.");
+            attemptCounter++;
+            validateUser(attemptCounter);
+
+        } else {
+            if (checkIfBlocked(username)) {
+                System.out.println("This user is blocked due to many attempts to enter a correct password.");
+                showMenu();
+
+            } else {
+                User user = new User(username, password.toString());
+                System.out.println("You entered successfully as " + username + "!");
+                showMenu(user);
+            }
         }
     }
 
@@ -363,6 +470,13 @@ public class MyApp {
         return ifBlocked;
     }
 
+    /**
+     * Check if password corresponds to the user in database.
+     *
+     * @param username username of user to be checked in DB
+     * @param password password that is compared with an actual password of the user
+     * @return TRUE if password is correct, FALSE - if not
+     */
     public static boolean checkPasswordWithDB(String username, String password) {
         boolean correctPassword = false;
 
@@ -396,7 +510,10 @@ public class MyApp {
         }
     }
 
-    public static void unblockUsers() {
+    /**
+     * Unblock all users whose 24 hours of blocking their account.
+     */
+    public static void unblockAppropriateUsers() {
         try {
             String query = "UPDATE users SET Blocked = FALSE, TimeOfBlock = NULL WHERE Blocked = TRUE " +
                     "AND TIMEDIFF(NOW(), TimeOfBlock) > '24:00:00.000000'";
@@ -408,11 +525,11 @@ public class MyApp {
         }
     }
 
-    public static void exit() {
+    public static void exitApp() {
         if (getConnection() != null) {
             disconnect();
-            System.out.println("\nGoodbye!");
-            System.exit(0);
         }
+        System.out.println("\nGoodbye!");
+        System.exit(0);
     }
 }

@@ -21,13 +21,19 @@ public class AuthenticationManager {
                     "Roman_Horilyi");                           // ValueName
             hashCode = Integer.parseInt(valueOfSignature);
 
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (InvocationTargetException | IllegalAccessException | NumberFormatException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Check if the user who is trying to run this program has appropriate rights to do this action.
+     * Compare hashcode of the current user signature with hashcode of the signature that was created during execution
+     * of AppProtectionService program.
+     *
+     * AppProtectionService makes a local copy of AuthenticationSystem project and simultaneously creates s signature
+     * that contains data of computer, user and OS etc. in WinRegistry.
+     * */
     public static boolean isLegal() throws IOException {
         String username = System.getProperty("user.name");
 

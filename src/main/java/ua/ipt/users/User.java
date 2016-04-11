@@ -38,11 +38,14 @@ public class User {
         }
     }
 
+    /**
+     * Change password of the user, if difference between time of the last password change and current time
+     * is bigger than 24 hours.
+     */
     public void changePassword() {
-        if (checkTimeOfLastPasswordChange()) {  // true - if difference between last password change and now
-                                                // is bigger than 24 hours
-            checkOldPassword();
-            String newPassword = checkNewPassword();
+        if (checkTimeOfLastPasswordChange()) {
+            validateOldPassword();
+            String newPassword = validateNewPassword();
             setPassword(newPassword);
             updatePasswordInDB(newPassword);
         } else {
@@ -50,8 +53,12 @@ public class User {
         }
     }
 
+    /**
+     * Check if user is able to change his password.
+     * @return TRUE if difference between time of the last password change and current time is bigger than 24 hours
+     */
     public boolean checkTimeOfLastPasswordChange() {
-        boolean ifAppropriateTimeToChange = false;
+        boolean ifItIsAppropriateTime = false;
 
         try {
             String query = "SELECT * FROM users WHERE Username = ? " +
@@ -61,16 +68,16 @@ public class User {
 
             ResultSet result = select.executeQuery();
             if (result.next()) {
-                ifAppropriateTimeToChange = true;
+                ifItIsAppropriateTime = true;
             }
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
 
-        return ifAppropriateTimeToChange;
+        return ifItIsAppropriateTime;
     }
 
-    public void checkOldPassword() {
+    public void validateOldPassword() {
         System.out.print("\nEnter old password > ");
         Scanner sc = new Scanner(System.in);
         StringBuilder oldPassword = new StringBuilder();
@@ -78,11 +85,15 @@ public class User {
 
         if (!password.equals(oldPassword.toString())) {
             System.out.println("\nError. Incorrect old password.\nPlease, try again.");
-            checkOldPassword();
+            validateOldPassword();
         }
     }
 
-    public String checkNewPassword() {
+    /**
+     * Check if new password corresponds to all set requirements.
+     * @return new password
+     */
+    public String validateNewPassword() {
         System.out.print("Enter new password > ");
         Scanner sc = new Scanner(System.in);
         StringBuilder newPassword = new StringBuilder();
@@ -99,7 +110,7 @@ public class User {
         if (newPassword.toString().equals(password)) {
             System.out.println("\nError. You should enter new password different from the old one." +
                     "\nPlease, try again.");
-            checkNewPassword();
+            validateNewPassword();
         }
     }
 
@@ -109,19 +120,19 @@ public class User {
             // (?=.*[а-яА-Я]) - must contains at least one Cyrillic character
             System.out.println("\nError. You must use both Latin and Cyrillic characters in password." +
                     "\nPlease, try again.");
-            checkNewPassword();
+            validateNewPassword();
         }
 
         if (newPassword.length() < 8) {
             System.out.println("\nError. Password is too short. Min length must be more than 8 symbols." +
                     "\nPlease, try again.");
-            checkNewPassword();
+            validateNewPassword();
         }
 
         if (newPassword.length() > 32) {
             System.out.println("\nError. Password is too long. Max length must be less than 32 symbols." +
                     "\nPlease, try again.");
-            checkNewPassword();
+            validateNewPassword();
         }
     }
 
@@ -133,7 +144,7 @@ public class User {
 
         if (!newPassword.toString().equals(passwordConfirmation.toString())) {
             System.out.println("\nError. Your passwords don't match up.\nPlease, try again.");
-            checkNewPassword();
+            validateNewPassword();
         }
     }
 

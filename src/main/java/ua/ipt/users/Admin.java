@@ -16,8 +16,11 @@ public class Admin extends User {
         super(USERNAME, password);
     }
 
+    /**
+     * Change password of ADMIN after the first enter the system.
+     */
     public void changePasswordFirstAdminEntry() {
-        String newPassword = checkNewPassword();
+        String newPassword = validateNewPassword();
         updatePasswordInDB(newPassword);
         setPassword(newPassword);
     }
@@ -34,7 +37,7 @@ public class Admin extends User {
             username.replace(0, username.length(), sc.nextLine());
         }
 
-        String password = checkNewUserPassword();
+        String password = validateNewUserPassword();
 
         User newUser = new User(username.toString(), password);
         newUser.addUserToDB();
@@ -42,7 +45,7 @@ public class Admin extends User {
     }
 
     // is used only for addition of new user, so we have no need to check if password differ from the old one
-    public String checkNewUserPassword() {
+    public String validateNewUserPassword() {
         System.out.print("Enter password > ");
         Scanner sc = new Scanner(System.in);
         StringBuilder password = new StringBuilder();
