@@ -1,4 +1,4 @@
-package ua.ipt.signature;
+package ua.ipt.validation.signature;
 
 /**
  * Created by Roman Horilyi on 31.03.2016.

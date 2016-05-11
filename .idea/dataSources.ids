@@ -56,7 +56,9 @@
         <data-type>varchar(32)</data-type>
       </column>
       <column id="15" parent="3" name="TimeOfBlock">
-        <data-type>datetime</data-type>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
       <key id="16" parent="3" name="PRIMARY">
         <columns>IDUser</columns>

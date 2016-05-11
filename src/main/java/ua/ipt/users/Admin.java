@@ -20,9 +20,10 @@ public class Admin extends User {
      * Change password of ADMIN after the first enter the system.
      */
     public void changePasswordFirstAdminEntry() {
-        String newPassword = validateNewPassword();
-        updatePasswordInDB(newPassword);
-        setPassword(newPassword);
+        StringBuilder newPassword = validateNewPassword();
+        confirmNewPassword(newPassword);
+        updatePasswordInDB(newPassword.toString());
+        setPassword(newPassword.toString());
     }
 
     public void addNewUser() {
@@ -37,22 +38,22 @@ public class Admin extends User {
             username.replace(0, username.length(), sc.nextLine());
         }
 
-        String password = validateNewUserPassword();
+        StringBuilder password = validateNewUserPassword();
+        confirmNewPassword(password);
 
-        User newUser = new User(username.toString(), password);
+        User newUser = new User(username.toString(), password.toString());
         newUser.addUserToDB();
         System.out.println("Successfully added " + username + " to DB!");
     }
 
     // is used only for addition of new user, so we have no need to check if password differ from the old one
-    public String validateNewUserPassword() {
+    public StringBuilder validateNewUserPassword() {
         System.out.print("Enter password > ");
         Scanner sc = new Scanner(System.in);
         StringBuilder password = new StringBuilder();
         password.replace(0, password.length(), sc.nextLine());
 
-        checkIfPasswordMatchesPattern(password);
-        confirmNewPassword(password);
-        return password.toString();
+        password = checkIfPasswordMatchesPattern(password);
+        return password;
     }
 }

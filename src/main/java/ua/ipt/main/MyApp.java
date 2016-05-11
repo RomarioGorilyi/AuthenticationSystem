@@ -1,8 +1,11 @@
 package ua.ipt.main;
 
-import ua.ipt.hardware.Hardware;
+import ua.ipt.exceptions.CryptoException;
 import ua.ipt.users.Admin;
 import ua.ipt.users.User;
+import ua.ipt.validation.utils.AuthenticationManager;
+import ua.ipt.validation.utils.DatabaseSecurity;
+import ua.ipt.validation.hardware.Hardware;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -19,14 +22,21 @@ import static ua.ipt.database.Connector.*;
  */
 public class MyApp {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CryptoException {
         connect();
-        boolean isLegal = AuthenticationManager.isLegal();
-        if (!isLegal) {
-            System.out.println("You have no rights for this program.");
+        if (!AuthenticationManager.isLegal()) {
+            System.out.println("You have no rights for this program.\n" +
+                    "Program finishes its work.");
+
         } else if (isAppBlocked()) {
-            System.out.println("You are blocked!");
+            System.out.println("You are blocked!\n" +
+                    "Program finishes its work.");
+
+        } else if (!DatabaseSecurity.checkSystemPassword()) {
+            System.out.println("You haven't managed to enter right system password.\n" +
+                    "Program finishes its work.");
         } else {
+            DatabaseSecurity.importUsersTable();
             System.out.println("----------------------------MyApp----------------------------");
             showMenu();
         }
@@ -35,7 +45,7 @@ public class MyApp {
     /**
      * Starting menu for unregistered in the system users
      */
-    public static void showMenu() throws IOException {
+    public static void showMenu() throws IOException, CryptoException {
         System.out.println("\n*** Main menu ***");
         System.out.println("* Enter the system - 1");
         System.out.println("* Help - 2");
@@ -84,7 +94,7 @@ public class MyApp {
      * ADMIN menu
      * @param admin ADMIN who enters and works with the system
      */
-    public static void showMenu(Admin admin) throws IOException {
+    public static void showMenu(Admin admin) throws IOException, CryptoException {
         System.out.println("\n*** Admin menu ***");
         System.out.println("* Change password - 1");
         System.out.println("* Show all users - 2");
@@ -148,7 +158,7 @@ public class MyApp {
      * User menu
      * @param user user who enters and works with the system
      */
-    public static void showMenu(User user) throws IOException {
+    public static void showMenu(User user) throws IOException, CryptoException {
         System.out.println("\n*** User menu ***");
         System.out.println("* Change password - 1");
         System.out.println("* Help - 2");
@@ -223,7 +233,7 @@ public class MyApp {
      *
      * @throws IOException
      */
-    public static void enterSystem() throws IOException {
+    public static void enterSystem() throws IOException, CryptoException {
         if (checkIfTableEmpty()) {
             Admin admin = new Admin("");
             admin.addUserToDB();
@@ -261,7 +271,7 @@ public class MyApp {
      * @return number of overall attempts to enter the system
      * @throws IOException
      */
-    public static int validateUser(int attemptCounter) throws IOException {
+    public static int validateUser(int attemptCounter) throws IOException, CryptoException {
         if (attemptCounter < 5) {
             System.out.print("\nEnter username > ");
             Scanner sc = new Scanner(System.in);
@@ -361,7 +371,7 @@ public class MyApp {
         String serialNumber = Hardware.getSerialNumber();
         try {
             String query = "SELECT * FROM blockedusers WHERE SerialNumber = ? " +
-                    "AND TIMEDIFF(NOW(), TimeOfBlock) <= '24:00:00.000000'";
+                    "AND TIMEDIFF(NOW(), TimeOfBlock) <= 24";
             PreparedStatement select = getConnection().prepareStatement(query);
             select.setString(1, serialNumber);
 
@@ -382,7 +392,7 @@ public class MyApp {
      * @return number of overall attempts to enter the system
      * @throws IOException
      */
-    public static int enterAsAdmin(int attemptCounter) throws IOException {
+    public static int enterAsAdmin(int attemptCounter) throws IOException, CryptoException {
         System.out.print("Enter password > ");
         Scanner sc1 = new Scanner(System.in);
         StringBuilder password = new StringBuilder();
@@ -409,7 +419,7 @@ public class MyApp {
      * @param attemptCounter number of attempts to enter the system that were made beforehand
      * @throws IOException
      */
-    public static void enterAsUser(String username, int attemptCounter) throws IOException {
+    public static void enterAsUser(String username, int attemptCounter) throws IOException, CryptoException {
         System.out.print("Enter password > ");
         Scanner sc1 = new Scanner(System.in);
         StringBuilder password = new StringBuilder();
@@ -516,7 +526,7 @@ public class MyApp {
     public static void unblockAppropriateUsers() {
         try {
             String query = "UPDATE users SET Blocked = FALSE, TimeOfBlock = NULL WHERE Blocked = TRUE " +
-                    "AND TIMEDIFF(NOW(), TimeOfBlock) > '24:00:00.000000'";
+                    "AND TIMEDIFF(NOW(), TimeOfBlock) > 24";
             Statement update = getConnection().createStatement();
             update.executeUpdate(query);
 
@@ -525,10 +535,15 @@ public class MyApp {
         }
     }
 
-    public static void exitApp() {
+    public static void exitApp() throws CryptoException {
+        DatabaseSecurity.getNewSystemPassword();
+        DatabaseSecurity.exportUsersTable();
+        DatabaseSecurity.cleanUsersTable();
+
         if (getConnection() != null) {
             disconnect();
         }
+
         System.out.println("\nGoodbye!");
         System.exit(0);
     }

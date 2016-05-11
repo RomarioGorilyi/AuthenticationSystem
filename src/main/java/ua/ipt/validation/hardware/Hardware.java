@@ -1,4 +1,4 @@
-package ua.ipt.hardware;
+package ua.ipt.validation.hardware;
 
 import org.apache.commons.lang3.SystemUtils;
 

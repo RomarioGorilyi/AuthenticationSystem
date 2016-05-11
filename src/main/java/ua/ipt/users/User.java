@@ -45,9 +45,10 @@ public class User {
     public void changePassword() {
         if (checkTimeOfLastPasswordChange()) {
             validateOldPassword();
-            String newPassword = validateNewPassword();
-            setPassword(newPassword);
-            updatePasswordInDB(newPassword);
+            StringBuilder newPassword = validateNewPassword();
+            confirmNewPassword(newPassword);
+            setPassword(newPassword.toString());
+            updatePasswordInDB(newPassword.toString());
         } else {
             System.out.println("It's too early to change password. Try a bit later.");
         }
@@ -93,47 +94,49 @@ public class User {
      * Check if new password corresponds to all set requirements.
      * @return new password
      */
-    public String validateNewPassword() {
+    public StringBuilder validateNewPassword() {
         System.out.print("Enter new password > ");
         Scanner sc = new Scanner(System.in);
         StringBuilder newPassword = new StringBuilder();
         newPassword.replace(0, newPassword.length(), sc.nextLine());
 
-        checkIfNewPasswordDifferFromOld(newPassword);
-        checkIfPasswordMatchesPattern(newPassword);
-        confirmNewPassword(newPassword);
+        newPassword = checkIfNewPasswordDifferFromOld(newPassword);
+        newPassword = checkIfPasswordMatchesPattern(newPassword);
 
-        return newPassword.toString();
+        return newPassword;
     }
 
-    public void checkIfNewPasswordDifferFromOld(StringBuilder newPassword) {
+    public StringBuilder checkIfNewPasswordDifferFromOld(StringBuilder newPassword) {
         if (newPassword.toString().equals(password)) {
             System.out.println("\nError. You should enter new password different from the old one." +
                     "\nPlease, try again.");
-            validateNewPassword();
+            newPassword = validateNewPassword();
         }
+        return newPassword;
     }
 
-    public void checkIfPasswordMatchesPattern(StringBuilder newPassword) {
+    public StringBuilder checkIfPasswordMatchesPattern(StringBuilder newPassword) {
         if (!newPassword.toString().matches("((?=.*[a-zA-Z])(?=.*[а-яА-Я]).+)")) {
-            // (?=.*[a-zA-Z]) - must contains at least one Latin character
-            // (?=.*[а-яА-Я]) - must contains at least one Cyrillic character
+            /* (?=.*[a-zA-Z]) - must contains at least one Latin character
+               (?=.*[а-яА-Я]) - must contains at least one Cyrillic character */
             System.out.println("\nError. You must use both Latin and Cyrillic characters in password." +
                     "\nPlease, try again.");
-            validateNewPassword();
+            newPassword = validateNewPassword();
         }
 
         if (newPassword.length() < 8) {
             System.out.println("\nError. Password is too short. Min length must be more than 8 symbols." +
                     "\nPlease, try again.");
-            validateNewPassword();
+            newPassword = validateNewPassword();
         }
 
         if (newPassword.length() > 32) {
             System.out.println("\nError. Password is too long. Max length must be less than 32 symbols." +
                     "\nPlease, try again.");
-            validateNewPassword();
+            newPassword = validateNewPassword();
         }
+
+        return newPassword;
     }
 
     public void confirmNewPassword(StringBuilder newPassword) {
@@ -144,7 +147,7 @@ public class User {
 
         if (!newPassword.toString().equals(passwordConfirmation.toString())) {
             System.out.println("\nError. Your passwords don't match up.\nPlease, try again.");
-            validateNewPassword();
+            confirmNewPassword(newPassword);
         }
     }
 

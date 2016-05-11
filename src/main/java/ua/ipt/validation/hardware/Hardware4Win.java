@@ -1,4 +1,4 @@
-package ua.ipt.hardware;
+package ua.ipt.validation.hardware;
 
 import java.io.IOException;
 import java.io.InputStream;

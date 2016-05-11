@@ -1,4 +1,4 @@
-package ua.ipt.signature;
+package ua.ipt.validation.signature;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

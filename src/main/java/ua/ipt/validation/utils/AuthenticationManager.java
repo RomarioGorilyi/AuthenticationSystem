@@ -1,11 +1,11 @@
-package ua.ipt.main;
+package ua.ipt.validation.utils;
 
-import ua.ipt.signature.Signature;
-import ua.ipt.signature.WinRegistry;
+import ua.ipt.validation.signature.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+
 
 /**
  * Created by Roman Horilyi on 31.03.2016.

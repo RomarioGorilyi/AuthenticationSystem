@@ -1,4 +1,4 @@
-ua\ipt\signature\WinRegistry.class
-ua\ipt\main\AuthenticationManager.class
+ua\ipt\validation\utils\AuthenticationManager.class
 ua\ipt\main\MyApp.class
-ua\ipt\signature\Signature.class
+ua\ipt\exceptions\CryptoException.class
+ua\ipt\validation\utils\DatabaseSecurity.class

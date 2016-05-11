@@ -17,4 +17,4 @@ create table blockedUsers (
 		 CONSTRAINT idPrimary primary key (IDUser),
 	SerialNumber varchar(32),
     TimeOfBlock timestamp not null
-)
+);

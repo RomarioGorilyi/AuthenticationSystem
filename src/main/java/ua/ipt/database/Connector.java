@@ -12,7 +12,7 @@ public class Connector {
 
     private static final String HOST = "jdbc:mysql://localhost:3306/users?useUnicode=true&characterEncoding=utf8";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "drakon104";
+    private static final String PASSWORD = "YOUR_PASSWORD_HERE"; // TODO change into your own password of host
 
     static Connection connection;
 
